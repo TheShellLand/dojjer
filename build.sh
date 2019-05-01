@@ -13,5 +13,5 @@ DOCKERNAME=$(echo "$STR" | cut -d '=' -f 2 | cut -d ' ' -f 3 | sed  's/"//g') ||
 docker build -t $DOCKERNAME .
 
 # push image
-#docker push
+docker push $DOCKERNAME
 

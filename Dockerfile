@@ -1,14 +1,19 @@
 FROM ubuntu:18.04
 
 LABEL maintainer="naisanza@gmail.com"
-LABEL description="dojjer template"
-LABEL dockername="theshellland/dojjer:ubuntu"
+LABEL description="For all your devops things"
+LABEL dockername="theshellland/dojjer:devops"
 LABEL version="0.1"
 
-ENV APP /app
-COPY app $APP
+RUN apt update && apt install -y git
+RUN git clone https://github.com/TheShellLand/antsable
+
+ENV APP /antsable
 WORKDIR $APP
 
+# install
+RUN /bin/bash shells/devops.sh
+
 # run app
-ENTRYPOINT ["/bin/bash", "app.sh"]
+CMD ["/bin/bash"]
 
