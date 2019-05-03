@@ -2,7 +2,8 @@ FROM python:3
 
 LABEL maintainer="naisanza@gmail.com"
 LABEL description="dojjer template"
-LABEL dockername="theshellland/dojjer:python3"
+LABEL dockername="theshellland/dojjer"
+LABEL dockertag="python3"
 LABEL version="0.1"
 
 ENV APP /app
