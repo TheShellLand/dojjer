@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# dojjer build template
+# dojjer build script
 
 cd $(dirname $0)
 
