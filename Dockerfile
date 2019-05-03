@@ -2,7 +2,8 @@ FROM ubuntu:18.04
 
 LABEL maintainer="naisanza@gmail.com"
 LABEL description="For all your devops things"
-LABEL dockername="theshellland/dojjer:devops"
+LABEL dockername="theshellland/dojjer"
+LABEL dockertag="devops"
 LABEL version="0.1"
 
 ENV APP /app
@@ -16,7 +17,7 @@ RUN git clone https://github.com/TheShellLand/antsable
 RUN /bin/bash antsable/shells/devops.sh
 
 # cleanup
-RUN apt autoclean -y && apt clean && apt autoremove -y
+RUN apt autoclean -y; apt clean; apt autoremove -y
 RUN rm -rf $APP
 
 # run app
