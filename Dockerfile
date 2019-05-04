@@ -1,7 +1,7 @@
 FROM ubuntu:18.04
 
 LABEL maintainer="naisanza@gmail.com"
-LABEL description="For all your devops things"
+LABEL description="Create an ssh server"
 LABEL dockername="theshellland/dojjer"
 LABEL dockertag="ssh"
 LABEL version="0.1"
