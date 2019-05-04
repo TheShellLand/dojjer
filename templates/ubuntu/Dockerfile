@@ -7,8 +7,9 @@ LABEL dockertag="ubuntu"
 LABEL version="0.1"
 
 ENV APP /app
-COPY app $APP
 WORKDIR $APP
+
+COPY app .
 
 # run app
 ENTRYPOINT ["/bin/bash", "app.sh"]

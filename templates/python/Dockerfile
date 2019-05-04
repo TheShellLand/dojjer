@@ -7,12 +7,13 @@ LABEL dockertag="python3"
 LABEL version="0.1"
 
 ENV APP /app
-COPY app $APP
 WORKDIR $APP
 
-RUN python3 -m venv venv
-RUN . venv/bin/activate
-RUN python3 -m pip install --upgrade pip -r requirements.txt
+COPY app .
+
+RUN python3 -m venv venv \
+    && . venv/bin/activate \
+    && python3 -m pip install --upgrade pip -r requirements.txt
 
 # run tests
 #RUN python3 -m pytest
