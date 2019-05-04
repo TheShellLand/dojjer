@@ -21,6 +21,8 @@ RUN \
     && rm -rf $APP \
     && apt autoclean -y; apt clean; apt autoremove -y
 
+WORKDIR /root
+
 # root
 VOLUME ["/root"]
 
