@@ -7,13 +7,12 @@ LABEL dockertag="ssh"
 LABEL version="0.1"
 
 ENV APP /app
+WORKDIR $APP
 
 RUN apt update && apt install -y git
-RUN mkdir -p $APP \
-    && cd $APP \
-    \
+RUN \
     # clone repo
-    && git clone https://github.com/TheShellLand/antsable \
+    git clone https://github.com/TheShellLand/antsable \
     \
     # install
     && ./antsable/shells/ssh-docker.sh \
