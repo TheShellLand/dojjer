@@ -7,21 +7,27 @@ LABEL dockertag="ssh"
 LABEL version="0.1"
 
 ENV APP /app
-RUN mkdir -p $APP
-WORKDIR $APP
 
 RUN apt update && apt install -y git
-RUN git clone https://github.com/TheShellLand/antsable
+RUN mkdir -p $APP \
+    && cd $APP \
+    \
+    # clone repo
+    && git clone https://github.com/TheShellLand/antsable \
+    \
+    # install
+    && ./antsable/shells/ssh-docker.sh \
+    \
+    # cleanup
+    && rm -rf $APP \
+    && apt autoclean -y; apt clean; apt autoremove -y
 
-# install
-RUN /bin/bash antsable/shells/ssh-docker.sh
+# ssh keys
+VOLUME ["/etc/ssh"]
 
-# cleanup
-RUN apt autoclean -y; apt clean; apt autoremove -y
-RUN rm -rf $APP
-
+# ssh port
 EXPOSE 22
 
-# run app
+# shell
 CMD ["/bin/bash"]
 
