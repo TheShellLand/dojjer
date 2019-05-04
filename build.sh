@@ -4,7 +4,6 @@
 
 cd $(dirname $0)
 
-
 DOCKERFILE="Dockerfile"
 
 if [ ! $(which docker) ]; then echo "*** missing docker, please install docker ***"; exit 1; fi
