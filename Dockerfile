@@ -7,19 +7,24 @@ LABEL dockertag="devops"
 LABEL version="0.1"
 
 ENV APP /app
-RUN mkdir -p $APP
-WORKDIR $APP
 
 RUN apt update && apt install -y git
-RUN git clone https://github.com/TheShellLand/antsable
+RUN mkdir -p $APP \
+    && cd $APP \
+    \
+    # clone repo
+    && git clone https://github.com/TheShellLand/antsable \
+    \
+    # install
+    && ./antsable/shells/devops.sh \
+    \
+    # cleanup
+    && rm -rf $APP \
+    && apt autoclean -y; apt clean; apt autoremove -y
 
-# install
-RUN /bin/bash antsable/shells/devops.sh
+# root
+VOLUME ["/root"]
 
-# cleanup
-RUN apt autoclean -y; apt clean; apt autoremove -y
-RUN rm -rf $APP
-
-# run app
+# shell
 CMD ["/bin/bash"]
 
