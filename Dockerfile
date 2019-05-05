@@ -16,7 +16,8 @@ RUN \
     \
     # install
     && cd antsable \
-    && ./ansible.sh playbooks/ubuntu-readyup-18.x.yml \
+    && chmod +x shells/*.sh \
+    && ./shells/readyup.sh \
     \
     # cleanup
     && rm -rf $APP \
