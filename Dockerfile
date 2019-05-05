@@ -21,6 +21,9 @@ RUN \
     && rm -rf $APP \
     && apt autoclean -y; apt clean; apt autoremove -y
 
+# copy entrypoint
+COPY entry.sh /
+
 WORKDIR /root
 
 # ssh keys
@@ -31,4 +34,7 @@ EXPOSE 22
 
 # shell
 CMD ["/bin/bash"]
+
+# start ssh
+ENTRYPOINT ["/bin/bash", "/entry.sh"]
 
