@@ -15,7 +15,8 @@ RUN \
     git clone https://github.com/TheShellLand/antsable \
     \
     # install
-    && ./antsable/shells/ssh-docker.sh \
+    && cd antsable \
+    && ./ansible.sh playbooks/ubuntu-readyup-18.x.yml \
     \
     # cleanup
     && rm -rf $APP \
@@ -28,6 +29,7 @@ WORKDIR /root
 
 # ssh keys
 VOLUME ["/etc/ssh"]
+VOLUME ["/root"]
 
 # ssh port
 EXPOSE 22
