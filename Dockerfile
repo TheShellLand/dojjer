@@ -24,9 +24,20 @@ RUN \
 
 WORKDIR /root
 
-# root
+# copy entrypoint
+COPY entry.sh /
+
+WORKDIR /root
+
+VOLUME ["/etc/ssh"]
 VOLUME ["/root"]
+
+# ssh port
+EXPOSE 22
 
 # shell
 CMD ["/bin/bash"]
+
+# start ssh
+ENTRYPOINT ["/bin/bash", "/entry.sh"]
 
