@@ -16,6 +16,7 @@ RUN \
     \
     # install
     && ./antsable/shells/devops.sh \
+    && ./antsable/shells/ssh-docker.sh \
     \
     # cleanup
     && rm -rf $APP \
