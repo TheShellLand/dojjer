@@ -2,6 +2,7 @@
 
 # dojjer build script
 
+set -xe
 cd $(dirname $0)
 
 DOCKERFILE="Dockerfile"
