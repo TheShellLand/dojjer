@@ -1,7 +1,8 @@
 #!/bin/bash
 
-# dojjer build script
+# docker build script
 
+set -xe
 cd $(dirname $0)
 
 DOCKERFILE="Dockerfile"
