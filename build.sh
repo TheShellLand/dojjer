@@ -22,9 +22,9 @@ DOCKERTAG=$(echo "$STR" | cut -d '=' -f 2 | cut -d ' ' -f 3 | sed  's/"//g') || 
 # build image
 docker build -t $DOCKERNAME:$DOCKERTAG .
 
-# list image
-docker images $DOCKERNAME
-
 # push image
 docker push $DOCKERNAME:$DOCKERTAG
+
+# list image
+docker images | grep $DOCKERNAME
 
