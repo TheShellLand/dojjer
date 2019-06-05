@@ -23,13 +23,13 @@ DOCKERTAG=$(echo "$STR" | cut -d '=' -f 2 | cut -d ' ' -f 3 | sed  's/"//g') || 
 docker build -t $DOCKERNAME:$DOCKERTAG .
 docker tag $DOCKERNAME:$DOCKERTAG $DOCKERNAME:latest
 
-# list image
-docker images $DOCKERNAME
-
 # push image
 REGISTRY="registry:5000"
 docker tag $DOCKERNAME $REGISTRY/$DOCKERNAME:$DOCKERTAG
 docker tag $DOCKERNAME $REGISTRY/$DOCKERNAME:latest
 docker push $DOCKERNAME:$DOCKERTAG
 docker push $DOCKERNAME:latest
+
+# list image
+docker images | grep $DOCKERNAME
 
