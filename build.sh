@@ -31,5 +31,5 @@ docker push $DOCKERNAME:$DOCKERTAG
 docker push $DOCKERNAME:latest
 
 # list image
-docker images | grep $DOCKERNAME
+docker images $DOCKERNAME
 
