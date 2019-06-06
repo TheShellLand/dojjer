@@ -2,7 +2,7 @@
 
 # docker entrypoint
 
-set -e
+set -xe
 
 # enter in shell commands here
 
