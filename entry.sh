@@ -3,7 +3,7 @@
 # entrypoint for ssh
 # this is needed to start the ssh service
 
-set -e
+set -xe
 
 service ssh start
 service ssh status
