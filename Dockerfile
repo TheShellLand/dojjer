@@ -9,6 +9,7 @@ LABEL version="0.1"
 ENV APP /app
 WORKDIR $APP
 
+RUN apt update && apt upgrade -y
 RUN apt update && apt install -y git
 RUN \
     # clone repo
