@@ -8,6 +8,8 @@ LABEL version="0.1"
 
 WORKDIR /root
 
+RUN apt update && apt upgrade -y
+
 VOLUME ["/root"]
 
 # run app
