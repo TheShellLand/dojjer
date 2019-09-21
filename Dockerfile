@@ -10,6 +10,8 @@ WORKDIR /
 
 COPY entry.sh .
 
+RUN apt update && apt upgrade -y
+
 # Install certbot-auto
 RUN apt update \
   && apt install -y wget \
