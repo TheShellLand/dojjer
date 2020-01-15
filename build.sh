@@ -2,7 +2,6 @@
 
 # docker build script
 
-set -xe
 cd $(dirname $0)
 
 DOCKERFILE="Dockerfile"
@@ -18,6 +17,8 @@ DOCKERNAME=$(echo "$STR" | cut -d '=' -f 2 | cut -d ' ' -f 3 | sed  's/"//g') ||
 # get dockertag
 STR=$(cat $DOCKERFILE | grep LABEL | grep dockertag) || { echo "failed"; exit 1; }
 DOCKERTAG=$(echo "$STR" | cut -d '=' -f 2 | cut -d ' ' -f 3 | sed  's/"//g') || { echo "failed"; exit    1; }
+
+set -xe
 
 # build image
 docker build -t $DOCKERNAME:$DOCKERTAG .
