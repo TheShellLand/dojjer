@@ -24,7 +24,7 @@ VOLUME ["/opt/phantom/scm"]
 VOLUME ["/opt/phantom/vault"]
 VOLUME ["/opt/phantom/tmp/shared/"]
 
-RUN /opt/phantom/bin/phantom_setup.sh install --no-prompt
+RUN set -x; /opt/phantom/bin/phantom_setup.sh install --no-prompt || echo OK
 
 EXPOSE 80 443
 
