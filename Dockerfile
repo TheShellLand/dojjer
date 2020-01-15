@@ -26,6 +26,6 @@ VOLUME ["/opt/phantom/tmp/shared/"]
 
 RUN set -x; /opt/phantom/bin/phantom_setup.sh install --no-prompt || echo OK
 
-EXPOSE 80 443
+EXPOSE 8888
 
 CMD ["/bin/bash"]
