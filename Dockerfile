@@ -18,6 +18,12 @@ RUN sed -i 's/unset*//' /opt/phantom/bin/phantom_setup.sh
 RUN sed -i 's/^read*//' /opt/phantom/bin/phantom_setup.sh
 RUN sed -i 's/read -r proceed*//' /opt/phantom/bin/phantom_setup.sh
 
+VOLUME ["/opt/phantom/apps"]
+VOLUME ["/opt/phantom/local_data/app_states"]
+VOLUME ["/opt/phantom/scm"]
+VOLUME ["/opt/phantom/vault"]
+VOLUME ["/opt/phantom/tmp/shared/"]
+
 RUN /opt/phantom/bin/phantom_setup.sh install --no-prompt
 
 EXPOSE 80 443
