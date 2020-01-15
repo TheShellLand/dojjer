@@ -11,7 +11,7 @@ who's the dojjiest of them all
 * [readyup](https://github.com/TheShellLand/dojjer/blob/readyup/Dockerfile) - an engineer's environment
 * [certbot](https://github.com/TheShellLand/dojjer/blob/certbot/Dockerfile) - certbot + nginx dream team
 * [gluster5](https://github.com/TheShellLand/dojjer/blob/gluster5/Dockerfile) - gluster5 for rancher
-* [phantom-splunk](https://github.com/TheShellLand/dojjer/blob/phantom-splunk/Dockerfile) - splunk phantom
+* [phantom-docker](https://github.com/TheShellLand/dojjer/blob/phantom-docker/Dockerfile) - splunk phantom
 
 # build
 ```
