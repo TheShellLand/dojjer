@@ -4,7 +4,6 @@ LABEL maintainer="naisanza@gmail.com"
 LABEL description="nginx with certbot"
 LABEL dockername="theshellland/dojjer"
 LABEL dockertag="certbot"
-LABEL version="0.1"
 
 WORKDIR /
 
