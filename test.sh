@@ -15,4 +15,5 @@ DOCKERTAG=$(git describe --tags)
 
 set -xe
 
-docker run --rm -it $DOCKERNAME:$DOCKERTAG
+docker run --rm -it $DOCKERNAME:$DOCKERTAG "$@"
+
