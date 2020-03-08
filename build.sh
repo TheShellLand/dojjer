@@ -11,11 +11,10 @@ if [ ! -f $DOCKERFILE ]; then echo "*** missing $DOCKERFILE ***"; exit 1; fi
 
 # get dockername
 STR=$(cat $DOCKERFILE | grep LABEL | grep dockername) || { echo "failed"; exit 1; }
-DOCKERNAME=$(echo "$STR" | cut -d '=' -f 2 | cut -d ' ' -f 3 | sed  's/"//g') || { echo "failed"; exit   1; }
+DOCKERNAME=$(echo "$STR" | cut -d '=' -f 2 | cut -d ' ' -f 3 | sed  's/"//g') || { echo "failed"; exit 1; }
 
 # get dockertag
-STR=$(cat $DOCKERFILE | grep LABEL | grep dockertag) || { echo "failed"; exit 1; }
-DOCKERTAG=$(echo "$STR" | cut -d '=' -f 2 | cut -d ' ' -f 3 | sed  's/"//g') || { echo "failed"; exit    1; }
+DOCKERTAG=$(git describe --tags)
 
 set -xe
 
@@ -26,4 +25,4 @@ docker build -t $DOCKERNAME:$DOCKERTAG .
 docker push $DOCKERNAME:$DOCKERTAG
 
 # list image
-docker images | grep $DOCKERNAME
+docker images | grep $DOCKERNAME | grep $DOCKERTAG
