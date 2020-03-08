@@ -25,4 +25,4 @@ docker build -t $DOCKERNAME:$DOCKERTAG .
 docker push $DOCKERNAME:$DOCKERTAG
 
 # list image
-docker images | grep $DOCKERNAME | grep $DOCKERTAG
+docker images | grep $DOCKERNAME
