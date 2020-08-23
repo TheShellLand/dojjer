@@ -3,9 +3,6 @@ FROM centos/systemd
 
 LABEL maintainer="naisanza@gmail.com"
 LABEL description="Splunk Phantom"
-LABEL dockername="theshellland/phantom-docker"
-LABEL dockertag="0.1.0"
-LABEL version="0.1.0"
 
 # update
 RUN set -xe; yum update -y
