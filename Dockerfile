@@ -2,9 +2,6 @@ FROM ubuntu:18.04
 
 LABEL maintainer="naisanza@gmail.com"
 LABEL description="An engineer's environment"
-LABEL dockername="theshellland/dojjer"
-LABEL dockertag="readyup"
-LABEL version="0.1"
 
 ENV APP /app
 WORKDIR $APP
