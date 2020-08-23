@@ -9,11 +9,11 @@ DOCKERNAME=theshellland/dojjer:devops
 DOCKERTAG=$(git describe --tag --always)
 
 # build image
-docker build -t $DOCKERNAME:$DOCKERTAG .
+docker build -t $DOCKERNAME .
 
 # list image
 docker images $DOCKERNAME
 
 # push image
-docker push $DOCKERNAME:$DOCKERTAG
+docker push $DOCKERNAME
 
