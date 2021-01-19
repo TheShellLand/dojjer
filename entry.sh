@@ -9,4 +9,3 @@ service ssh start
 service ssh status
 
 exec "$@"
-
