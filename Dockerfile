@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 
 LABEL maintainer="naisanza@gmail.com"
 LABEL description="An engineer's environment"
@@ -14,8 +14,7 @@ RUN \
     \
     # install
     && cd antsable \
-    && chmod +x shells/*.sh \
-    && ./shells/readyup.sh \
+    && ./ansible.sh playbooks/readyup.yml \
     \
     # cleanup
     && rm -rf $APP \
@@ -38,4 +37,3 @@ CMD ["/bin/bash"]
 
 # start ssh
 ENTRYPOINT ["/bin/bash", "/entry.sh"]
-
