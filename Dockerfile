@@ -15,10 +15,10 @@ RUN \
     # install
     && cd antsable \
     && ./ansible.sh playbooks/readyup.yml \
+    && ./ansible.sh playbooks/apt_upgrade.yml \
     \
     # cleanup
-    && rm -rf $APP \
-    && apt autoclean -y; apt clean; apt autoremove -y
+    && rm -rf $APP
 
 # copy entrypoint
 COPY entry.sh /
