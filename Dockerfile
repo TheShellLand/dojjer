@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 
 LABEL maintainer="naisanza@gmail.com"
 LABEL description="For all your devops things"
