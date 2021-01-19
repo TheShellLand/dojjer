@@ -9,4 +9,3 @@ set -e
 
 # execute additional arguments in bash
 exec "$@"
-

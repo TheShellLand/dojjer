@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 
 LABEL maintainer="naisanza@gmail.com"
 LABEL description="dojjer template"
@@ -11,4 +11,3 @@ VOLUME ["/root"]
 
 # run app
 CMD ["/bin/bash"]
-

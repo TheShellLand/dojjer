@@ -16,4 +16,3 @@ docker images $DOCKERNAME
 
 # push image
 docker push $DOCKERNAME:$DOCKERTAG
-
