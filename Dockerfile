@@ -9,13 +9,13 @@ WORKDIR /install
 RUN apt update && apt install -y git
 RUN git clone https://github.com/TheShellLand/antsable && \
     cd antsable && \
+    ./install-ansible.sh && \
+    ./ansible.sh playbooks/ldap.yml && \
     ./ansible.sh playbooks/devops.yml && \
-    ./shells/ssh-docker.sh && \
     ./ansible.sh playbooks/apt_upgrade.yml
 
 WORKDIR /root
 
-VOLUME ["/etc/ssh"]
 VOLUME ["/root"]
 
 # ssh port
