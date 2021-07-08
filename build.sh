@@ -5,7 +5,7 @@
 set -xe
 cd $(dirname $0)
 
-DOCKERNAME=theshellland/dojjer:ldap
+DOCKERNAME=theshellland/dojjer:antsable
 DOCKERTAG=$(git describe --tag --always)
 
 # build image
