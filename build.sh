@@ -5,8 +5,8 @@
 set -xe
 cd $(dirname $0)
 
-DOCKERNAME=theshellland/dojjer:bash
-DOCKERTAG=$(git describe --tag --always)
+DOCKERNAME=theshellland/dojjer
+DOCKERTAG=bash
 
 # build image
 docker build -t $DOCKERNAME:$DOCKERTAG .
